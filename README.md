@@ -26,6 +26,8 @@ In your project's Gruntfile, add a section named `htmlhint` to the data object p
 
 See all rules here: [https://github.com/yaniswang/HTMLHint/wiki/Rules](https://github.com/yaniswang/HTMLHint/wiki/Rules)
 
+If options is empty, task will scan nothing.
+
 #### options.htmlhintrc
 Type: `String`
 Default value: `null`
