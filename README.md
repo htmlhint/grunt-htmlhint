@@ -72,7 +72,7 @@ htmlhint: {
 ```js
 htmlhint: {
   options: {
-    htmllintrc: '.htmllintrc'
+    htmlhintrc: '.htmlhintrc'
   },
   html1: {
     src: ['path/to/**/*.html']
