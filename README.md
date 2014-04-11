@@ -46,6 +46,84 @@ Default value: `false`
 
 Report HTMLHint errors but dont fail the task
 
+#### options.tagname-lowercase
+Type: `Boolean`
+Default value: `false`
+
+Tagname must be lowercase
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Tagname-lowercase
+
+#### options.attr-lowercase
+Type: `Boolean`
+Default value: `false`
+
+Attribute name must be lowercase.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Attr-lowercase
+
+#### options.attr-value-double-quotes
+Type: `Boolean`
+Default value: `false`
+
+Attribute value must closed by double quotes.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Attr-value-double-quotes
+
+#### options.attr-value-not-empty
+Type: `Boolean`
+Default value: `false`
+
+Attribute must set value.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Attr-value-not-empty
+
+#### options.doctype-first
+Type: `Boolean`
+Default value: `false`
+
+Doctype must be first element on the page.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Doctype-first
+
+#### options.tag-pair
+Type: `Boolean`
+Default value: `false`
+
+Tag must be paired.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Tag-pair
+
+#### options.tag-self-close
+Type: `Boolean`
+Default value: `false`
+
+The empty tag must closed by self.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Tag-self-close
+
+#### options.spec-char-escape
+Type: `Boolean`
+Default value: `false`
+
+Special characters must be escaped.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Spec-char-escape
+
+#### options.id-unique
+Type: `Boolean`
+Default value: `false`
+
+Element Id's must be unique
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Id-unique
+
+#### options.src-not-empty
+Type: `Boolean`
+Default value: `false`
+
+Src of img(script,link) must set value.
+Emtpy of src will visit current page twice.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Src-not-empty
+
+#### options.img-alt-require
+Type: `Boolean`
+Default value: `false`
+
+Alt of img tag must be set value.
+More details -- https://github.com/yaniswang/HTMLHint/wiki/Img-alt-require
+
 ### Usage Examples
 
 #### Direct options

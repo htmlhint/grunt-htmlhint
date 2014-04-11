@@ -4,6 +4,23 @@
  *
  * Copyright (c) 2013 Yanis Wang
  * Licensed under the MIT license.
+ *
+ * Option Name                  Default         More Info
+ * 'attr-lowercase'             false           https://github.com/yaniswang/HTMLHint/wiki/Attr-lowercase
+ * 'attr-value-double-quotes'   false           https://github.com/yaniswang/HTMLHint/wiki/Attr-value-double-quotes
+ * 'attr-value-not-empty'       false           https://github.com/yaniswang/HTMLHint/wiki/Attr-value-not-empty
+ * 'doctype-first'              false           https://github.com/yaniswang/HTMLHint/wiki/Doctype-first
+ * 'head-script-disabled'       false           https://github.com/yaniswang/HTMLHint/wiki/Head-script-disabled  
+ * 'id-class-value'             false           https://github.com/yaniswang/HTMLHint/wiki/Id-class-value
+ * 'id-unique'                  false           https://github.com/yaniswang/HTMLHint/wiki/Id-unique
+ * 'img-alt-require'            false           https://github.com/yaniswang/HTMLHint/wiki/Img-alt-require
+ * 'spec-char-escape'           false           https://github.com/yaniswang/HTMLHint/wiki/Spec-char-escape
+ * 'style-disabled'             false           https://github.com/yaniswang/HTMLHint/wiki/Style-disabled
+ * 'src-not-empty'              false           https://github.com/yaniswang/HTMLHint/wiki/Src-not-empty
+ * 'tag-pair'                   false           https://github.com/yaniswang/HTMLHint/wiki/Tag-pair
+ * 'tag-self-close'             false           https://github.com/yaniswang/HTMLHint/wiki/Tag-self-close
+ * 'tagname-lowercase'          false           https://github.com/yaniswang/HTMLHint/wiki/Tagname-lowercase
+ *
  */
 
 'use strict';
@@ -14,7 +31,21 @@ module.exports = function(grunt) {
 
     var HTMLHint  = require("htmlhint").HTMLHint;
     var options = this.options({
-        force: false
+        force: false,
+        'attr-lowercase': false,
+        'attr-value-double-quotes': false,
+        'attr-value-not-empty': false,
+        'doctype-first': false,   
+        'head-script-disabled': false,
+        'id-class-value': false,
+        'id-unique': false,
+        'img-alt-require': false,
+        'spec-char-escape': false,
+        'style-disabled': false,
+        'src-not-empty': false,
+        'tag-pair': false,
+        'tag-self-close': false,
+        'tagname-lowercase': false 
       }), 
       arrFilesSrc = this.filesSrc,
       verbose = grunt.verbose;
