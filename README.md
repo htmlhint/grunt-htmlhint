@@ -1,6 +1,6 @@
 # grunt-htmlhint
 
-> Validate html files with htmlhint.
+> Lint html files with htmlhint.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
