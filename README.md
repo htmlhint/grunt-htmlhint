@@ -46,6 +46,23 @@ Default value: `false`
 
 Report HTMLHint errors but dont fail the task
 
+#### options.reporter
+Type: `string`
+Default value: '/reporters/console.js'
+Available values: '/reporters/console.js', '/reporters/file.js', 'path/to/your/custom/reporter.js'
+
+Using the default value will print errors to the console.
+
+The `reporters/file.js` option will log errors to a file.
+
+#### options.reporterOutput
+Type: `string`
+Default value: undefined
+
+The path path to the log file you would like errors to be logged to.
+
+This is required if you are using the `/reporters/file.js` option.
+
 ### Usage Examples
 
 #### Direct options
@@ -78,6 +95,20 @@ htmlhint: {
     src: ['path/to/**/*.html']
   },
   html2: {
+    src: ['path/to/**/*.html']
+  }
+}
+```
+
+#### Using a Custom Reporter
+
+```js
+htmlhint: {
+  options: {
+    'reporter': 'reporters/file.js',
+    'reporterOutput': 'tmp/htmlhint.txt',
+  },
+  html1: {
     src: ['path/to/**/*.html']
   }
 }

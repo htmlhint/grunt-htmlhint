@@ -14,8 +14,9 @@ module.exports = function(grunt) {
 
     var HTMLHint  = require("htmlhint").HTMLHint;
     var options = this.options({
-        force: false
-      }), 
+        force: false,
+        reporter: 'reporters/console.js'
+      }),
       arrFilesSrc = this.filesSrc,
       verbose = grunt.verbose;
 
@@ -39,22 +40,17 @@ module.exports = function(grunt) {
         if (messages.length > 0) {
           verbose.or.write( msg );
           grunt.log.error();
+          if (options.reporterOutput) {
+            var appendFileSync = require('fs').appendFileSync;
+            appendFileSync(options.reporterOutput, '[file] ' + filepath + '\n');
+          }
         } else {
           verbose.ok();
         }
         messages.forEach(function( message ) {
-          grunt.log.writeln( "[".red + ( "L" + message.line ).yellow + ":".red + ( "C" + message.col ).yellow + "]".red + ' ' + message.message.yellow );
-          var evidence = message.evidence,
-            col = message.col;
-          if (col === 0) {
-            evidence = '?'.inverse.red + evidence;
-          } else if (col > evidence.length) {
-            evidence = evidence + ' '.inverse.red;
-          } else {
-            evidence = evidence.slice(0, col - 1) + evidence[col - 1].inverse.red + evidence.slice(col);
-          }
-          grunt.log.writeln(evidence);
-          hintCount ++;
+          var output = require(options.reporter);
+          output.reporter(message, options.reporterOutput);
+          hintCount++;
         });
       }
       else{

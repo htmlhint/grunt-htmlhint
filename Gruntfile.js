@@ -27,7 +27,18 @@ module.exports = function(grunt) {
       all: {
         options: {
           'tag-pair': true,
-          'htmlhintrc': 'test/.htmlhintrc'
+          'htmlhintrc': 'test/.htmlhintrc',
+          'force': true
+        },
+        src: 'test/fixtures/*.html'
+      },
+      file: {
+        options: {
+          'tag-pair': true,
+          'htmlhintrc': 'test/.htmlhintrc',
+          'reporter': 'reporters/file.js',
+          'reporterOutput': 'tmp/htmlhint.txt',
+          'force': true
         },
         src: 'test/fixtures/*.html'
       }
