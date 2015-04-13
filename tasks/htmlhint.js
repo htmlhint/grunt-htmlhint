@@ -8,16 +8,24 @@
 
 'use strict';
 
+// replace left/right quotation marks with normal quotation marks
+function normalizeQuotationMarks(str) {
+  if (str) {
+    str = str.replace(/[\u201c\u201d]/g, '"');
+  }
+  return str;
+}
+
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('htmlhint', 'Validate html files with htmlhint.', function() {
 
     var HTMLHint  = require("htmlhint").HTMLHint;
     var options = this.options({
-        force: false
-      }), 
-      arrFilesSrc = this.filesSrc,
-      verbose = grunt.verbose;
+          force: false
+        }),
+        arrFilesSrc = this.filesSrc,
+        verbose = grunt.verbose;
 
     if (options.htmlhintrc) {
       var rc = grunt.file.readJSON(options.htmlhintrc);
@@ -31,8 +39,8 @@ module.exports = function(grunt) {
     var hintCount = 0;
     arrFilesSrc.forEach(function( filepath ) {
       var file = grunt.file.read( filepath ),
-        msg = "Linting " + filepath + "...",
-        messages;
+          msg = "Linting " + filepath + "...",
+          messages;
       if (file.length) {
         messages = HTMLHint.verify(file, options);
         verbose.write( msg );
@@ -42,10 +50,25 @@ module.exports = function(grunt) {
         } else {
           verbose.ok();
         }
+
+        if (options.ignore) {
+          var ignore = options.ignore instanceof Array ? options.ignore : [options.ignore];
+          messages = messages.filter(function(message) {
+            // iterate over the ignore rules and test the message agains each rule.
+            // A match should return false, which causes every() to return false and the message to be filtered out.
+            return ignore.every(function (currentValue) {
+              if (currentValue instanceof RegExp) {
+                return !currentValue.test(message.message);
+              }
+              return normalizeQuotationMarks(currentValue) !== normalizeQuotationMarks(message.message);
+            });
+          });
+        }
+
         messages.forEach(function( message ) {
           grunt.log.writeln( "[".red + ( "L" + message.line ).yellow + ":".red + ( "C" + message.col ).yellow + "]".red + ' ' + message.message.yellow );
           var evidence = message.evidence,
-            col = message.col;
+              col = message.col;
           if (col === 0) {
             evidence = '?'.inverse.red + evidence;
           } else if (col > evidence.length) {

@@ -82,6 +82,32 @@ htmlhint: {
   }
 }
 ```
+#### `ignore`
+
+Type: `Array`, `String`, or `RegExp`  
+Default: `null`
+
+Use this to specify the error message(s) to ignore. For example:
+
+```js
+all: {
+  options: {
+    ignore: 'Special characters must be escaped : [ < ].'
+  },
+  src: "html.tmpl.html"
+}
+```
+
+The ignore option also supports regular expressions. For example:
+
+```js
+all: {
+  options: {
+    ignore: /Special characters must be escaped/
+  },
+  src: "html.tmpl.html"
+}
+```
 
 ## Release History
 
