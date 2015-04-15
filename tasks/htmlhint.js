@@ -44,12 +44,6 @@ module.exports = function(grunt) {
       if (file.length) {
         messages = HTMLHint.verify(file, options);
         verbose.write( msg );
-        if (messages.length > 0) {
-          verbose.or.write( msg );
-          grunt.log.error();
-        } else {
-          verbose.ok();
-        }
 
         if (options.ignore) {
           var ignore = options.ignore instanceof Array ? options.ignore : [options.ignore];
@@ -63,6 +57,13 @@ module.exports = function(grunt) {
               return normalizeQuotationMarks(currentValue) !== normalizeQuotationMarks(message.message);
             });
           });
+        }
+
+        if (messages.length > 0) {
+          verbose.or.write( msg );
+          grunt.log.error();
+        } else {
+          verbose.ok();
         }
 
         messages.forEach(function( message ) {
