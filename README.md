@@ -85,4 +85,5 @@ htmlhint: {
 
 ## Release History
 
+ * 2015-10-7   v0.9.8   Update to htmlhint v0.9.8
  * 2013-4-6   v0.4.0   First release
