@@ -10,64 +10,59 @@
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('htmlhint', 'Validate html files with htmlhint.', function() {
+    grunt.registerMultiTask('htmlhint', 'Validate html files with htmlhint.', function() {
 
-    var HTMLHint  = require("htmlhint").HTMLHint;
-    var options = this.options({
-        force: false
-      }), 
-      arrFilesSrc = this.filesSrc,
-      verbose = grunt.verbose;
+        var HTMLHint = require("htmlhint").HTMLHint;
+        var options = this.options({
+                force: false
+            }),
+            arrFilesSrc = this.filesSrc,
+            verbose = grunt.verbose;
 
-    if (options.htmlhintrc) {
-      var rc = grunt.file.readJSON(options.htmlhintrc);
-      grunt.util._.defaults(options, rc);
-      delete options.htmlhintrc;
-    }
-
-    var force = options.force;
-    delete options.force;
-
-    var hintCount = 0;
-    arrFilesSrc.forEach(function( filepath ) {
-      var file = grunt.file.read( filepath ),
-        msg = "Linting " + filepath + "...",
-        messages;
-      if (file.length) {
-        messages = HTMLHint.verify(file, options);
-        verbose.write( msg );
-        if (messages.length > 0) {
-          verbose.or.write( msg );
-          grunt.log.error();
-        } else {
-          verbose.ok();
+        if (options.htmlhintrc) {
+            var rc = grunt.file.readJSON(options.htmlhintrc);
+            grunt.util._.defaults(options, rc);
+            delete options.htmlhintrc;
         }
-        messages.forEach(function( message ) {
-          grunt.log.writeln( "[".red + ( "L" + message.line ).yellow + ":".red + ( "C" + message.col ).yellow + "]".red + ' ' + message.message.yellow );
-          var evidence = message.evidence,
-            col = message.col;
-          if (col === 0) {
-            evidence = '?'.inverse.red + evidence;
-          } else if (col > evidence.length) {
-            evidence = evidence + ' '.inverse.red;
-          } else {
-            evidence = evidence.slice(0, col - 1) + evidence[col - 1].inverse.red + evidence.slice(col);
-          }
-          grunt.log.writeln(evidence);
-          hintCount ++;
+
+        var force = options.force;
+        delete options.force;
+
+        var hintCount = 0;
+        var fileCount = 0;
+        arrFilesSrc.forEach(function(filepath) {
+            var file = grunt.file.read(filepath),
+                msg = "   " + filepath,
+                messages;
+            if (file.length) {
+                messages = HTMLHint.verify(file, options);
+                if (messages.length > 0) {
+                    grunt.log.writeln(msg);
+                    messages.forEach(function(hint) {
+                        grunt.log.writeln('      L%d |%s', hint.line, hint.evidence.replace(/\t/g, ' ').grey);
+                        grunt.log.writeln('      %s^ %s', repeatStr(String(hint.line).length + 3 + hint.col - 1), (hint.message + ' (' + hint.rule.id + ')')[hint.type === 'error' ? 'red' : 'yellow']);
+                        hintCount++;
+                    });
+                    grunt.log.writeln('');
+                    fileCount ++;
+                }
+            }
         });
-      }
-      else{
-        grunt.log.writeln( "Skipping empty file " + filepath);
-      }
+
+        if (hintCount > 0) {
+            grunt.log.error('%d errors in %d files'.red, hintCount, fileCount);
+            return force;
+        }
+        else{
+            verbose.ok();
+        }
+
+        grunt.log.ok(arrFilesSrc.length + ' file' + (arrFilesSrc.length === 1 ? '' : 's') + ' lint free.');
+
     });
 
-    if ( hintCount > 0 ) {
-      return force;
+
+    function repeatStr(n, str){
+        return new Array(n + 1).join(str || ' ');
     }
-
-    grunt.log.ok(arrFilesSrc.length + ' file' + (arrFilesSrc.length === 1 ? '' : 's') + ' lint free.');
-
-  });
-
 };
