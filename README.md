@@ -2,6 +2,13 @@
 
 > Lint html files with htmlhint.
 
+[![Build Status](https://travis-ci.org/yaniswang/grunt-htmlhint.svg)](https://travis-ci.org/yaniswang/grunt-htmlhint)
+[![NPM version](https://img.shields.io/npm/v/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+[![License](https://img.shields.io/npm/l/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+[![NPM count](https://img.shields.io/npm/dm/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+[![NPM count](https://img.shields.io/npm/dt/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+
+
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
 
@@ -85,5 +92,6 @@ htmlhint: {
 
 ## Release History
 
+ * 2015-10-10   v0.9.9   Update to htmlhint v0.9.9
  * 2015-10-7   v0.9.8   Update to htmlhint v0.9.8
  * 2013-4-6   v0.4.0   First release
