@@ -46,6 +46,7 @@ module.exports = function(grunt) {
                         grunt.log.writeln(log);
                     });
                     grunt.log.writeln('');
+                    hintCount += messages.length;
                     fileCount ++;
                 }
             }
