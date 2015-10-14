@@ -38,38 +38,12 @@ module.exports = function(grunt) {
                 messages = HTMLHint.verify(file, options);
                 if (messages.length > 0) {
                     grunt.log.writeln(msg);
-                    messages.forEach(function(hint) {
-                        var leftWindow = 40;
-                        var rightWindow = leftWindow + 20;
-                        var evidence = hint.evidence;
-                        var line = hint.line;
-                        var col = hint.col;
-                        var evidenceCount = evidence.length;
-                        var leftCol = col > leftWindow + 1 ? col - leftWindow : 1;
-                        var rightCol = evidence.length > col + rightWindow ? col + rightWindow : evidenceCount;
-                        if(col < leftWindow + 1){
-                            rightCol += leftWindow - col + 1;
-                        }
-                        evidence = evidence.replace(/\t/g, ' ').substring(leftCol - 1, rightCol);
-                        // add ...
-                        if(leftCol > 1){
-                            evidence = '...' + evidence;
-                            leftCol -= 3;
-                        }
-                        if(rightCol < evidenceCount){
-                            evidence += '...';
-                        }
-                        // show evidence
-                        grunt.log.writeln('      L%d |%s'.white, line, evidence.grey);
-                        // show pointer & message
-                        var pointCol = col - leftCol;
-                        // add double byte character
-                        var match = evidence.substring(0, pointCol).match(/[^\u0000-\u00ff]/g);
-                        if(match !== null){
-                            pointCol += match.length;
-                        }
-                        grunt.log.writeln('      %s^ %s'.white, repeatStr(String(line).length + 3 + pointCol), (hint.message + ' (' + hint.rule.id+')')[hint.type === 'error'?'red':'yellow']);
-                        hintCount++;
+                    var arrLogs = HTMLHint.format(messages, {
+                        colors: true,
+                        indent: 6
+                    });
+                    arrLogs.forEach(function(log){
+                        grunt.log.writeln(log);
                     });
                     grunt.log.writeln('');
                     fileCount ++;
