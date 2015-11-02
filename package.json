@@ -2,7 +2,13 @@
   "name": "grunt-htmlhint",
   "description": "Validate html files with htmlhint.",
   "version": "0.9.12-fix",
-  "homepage": "https://github.com/yaniswang/grunt-htmlhint",
+  "licenses": "MIT",
+  "keywords": [
+    "gruntplugin",
+    "htmlhint",
+    "html",
+    "hint"
+  ],
   "author": {
     "name": "Yanis Wang",
     "email": "yanis.wang@gmail.com",
@@ -12,33 +18,20 @@
     "type": "git",
     "url": "git@github.com:yaniswang/grunt-htmlhint.git"
   },
-  "bugs": {
-    "url": "https://github.com/yaniswang/grunt-htmlhint/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/yaniswang/grunt-htmlhint/blob/master/LICENSE-MIT"
-    }
-  ],
-  "main": "Gruntfile.js",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt --force"
+    "test": "grunt"
   },
-  "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt": "~0.4.1",
-    "grunt-cli": "0.1.6"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
-  "keywords": [
-    "gruntplugin"
+  "files": [
+    "tasks"
   ],
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.11.3",
+    "grunt-shell": "^1.1.2"
+  },
   "dependencies": {
     "htmlhint": "~0.9.12"
   }

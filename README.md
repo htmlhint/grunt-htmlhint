@@ -1,6 +1,6 @@
 # grunt-htmlhint
 
-> Lint html files with htmlhint.
+> Lint html files with [HTMLHint](https://github.com/yaniswang/HTMLHint).
 
 [![Build Status](https://travis-ci.org/yaniswang/grunt-htmlhint.svg)](https://travis-ci.org/yaniswang/grunt-htmlhint)
 [![NPM version](https://img.shields.io/npm/v/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)

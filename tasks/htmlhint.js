@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     grunt.registerMultiTask('htmlhint', 'Validate html files with htmlhint.', function() {
 
-        var HTMLHint = require("htmlhint").HTMLHint;
+        var HTMLHint = require('htmlhint').HTMLHint;
         var options = this.options({
                 force: false
             }),
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         var fileCount = 0;
         arrFilesSrc.forEach(function(filepath) {
             var file = grunt.file.read(filepath),
-                msg = "   " + filepath,
+                msg = '   ' + filepath,
                 messages;
             if (file.length) {
                 messages = HTMLHint.verify(file, options);
@@ -64,8 +64,4 @@ module.exports = function(grunt) {
 
     });
 
-
-    function repeatStr(n, str){
-        return new Array(n + 1).join(str || ' ');
-    }
 };

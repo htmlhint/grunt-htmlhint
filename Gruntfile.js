@@ -10,38 +10,58 @@
 
 module.exports = function(grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js'
-      ],
-      options: {
-        jshintrc: '.jshintrc',
-      },
-    },
-
-    // Configuration to be run (and then tested).
-    htmlhint: {
-      all: {
-        options: {
-          'tag-pair': true,
-          'htmlhintrc': 'test/.htmlhintrc'
+    // Project configuration.
+    grunt.initConfig({
+        jshint: {
+            all: [
+                'Gruntfile.js',
+                'tasks/*.js'
+            ],
+            options: {
+                jshintrc: '.jshintrc'
+            }
         },
-        src: 'test/fixtures/*.html'
-      }
-    }
 
-  });
+        // Configuration to be run (and then tested).
+        htmlhint: {
+            all: {
+                options: {
+                    'tag-pair': true,
+                    'htmlhintrc': 'test/.htmlhintrc'
+                },
+                src: 'test/fixtures/*.html'
+            }
+        },
 
-  // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
+        shell: {
+            htmlhint: {
+                command: 'grunt htmlhint',
+                options: {
+                    callback: function (_, stdout, stderr, cb) {
+                        if (/invalid\.html/.test(stdout)) {
+                            if (/\(doctype-first\)/.test(stdout) && /\(tag-pair\)/.test(stdout)) {
+                                cb();
+                            } else {
+                                cb(false);
+                            }
+                        } else {
+                            cb(false);
+                        }
+                    }
+                }
+            }
+        }
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+    });
 
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'htmlhint']);
+    // Actually load this plugin's task(s).
+    grunt.loadTasks('tasks');
+
+    // These plugins provide necessary tasks.
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-shell');
+
+    // By default, lint and run all tests.
+    grunt.registerTask('default', ['jshint', 'shell:htmlhint']);
 
 };

@@ -1,16 +1,10 @@
 sudo: false
-
 language: node_js
 node_js:
     - "0.10"
     - "0.12"
-    - "4.1"
-    
-cache:
-  directories:
-    - node_modules
+    - "4"
+    - "stable"
 
-matrix:
-  fast_finish: true
-  
-script: "grunt"
+before_script:
+    - npm install -g grunt-cli
