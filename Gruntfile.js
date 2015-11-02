@@ -31,6 +31,25 @@ module.exports = function(grunt) {
                 },
                 src: 'test/fixtures/*.html'
             }
+        },
+
+        shell: {
+            htmlhint: {
+                command: 'grunt htmlhint',
+                options: {
+                    callback: function (_, stdout, stderr, cb) {
+                        if (/invalid\.html/.test(stdout)) {
+                            if (/\(doctype-first\)/.test(stdout) && /\(tag-pair\)/.test(stdout)) {
+                                cb();
+                            } else {
+                                cb(false);
+                            }
+                        } else {
+                            cb(false);
+                        }
+                    }
+                }
+            }
         }
 
     });
@@ -40,8 +59,9 @@ module.exports = function(grunt) {
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-shell');
 
     // By default, lint and run all tests.
-    grunt.registerTask('default', ['jshint', 'htmlhint']);
+    grunt.registerTask('default', ['jshint', 'shell:htmlhint']);
 
 };
