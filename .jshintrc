@@ -1,14 +1,18 @@
 {
   "curly": true,
-  "eqeqeq": true,
-  "immed": true,
-  "latedef": true,
-  "newcap": true,
-  "noarg": true,
-  "sub": true,
+  "expr": true,
+  "newcap": false,
+  "regexdash": true,
+  "trailing": true,
   "undef": true,
-  "boss": true,
+  "unused": true,
+  "maxerr": 100,
+
   "eqnull": true,
+  "evil": true,
+  "sub": true,
+
   "node": true,
-  "es5": true
+  "-W099": true,
+  "-W100": true
 }
