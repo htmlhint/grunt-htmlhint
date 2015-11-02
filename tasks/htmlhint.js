@@ -64,8 +64,4 @@ module.exports = function(grunt) {
 
     });
 
-
-    function repeatStr(n, str){
-        return new Array(n + 1).join(str || ' ');
-    }
 };
