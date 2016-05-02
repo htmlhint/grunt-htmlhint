@@ -1,7 +1,7 @@
 {
   "name": "grunt-htmlhint",
   "description": "Validate html files with htmlhint.",
-  "version": "0.9.12-fix",
+  "version": "0.9.13",
   "homepage": "https://github.com/yaniswang/grunt-htmlhint",
   "author": {
     "name": "Yanis Wang",
@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
-    "grunt": "~0.4.1",
-    "grunt-cli": "0.1.6"
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
@@ -40,6 +40,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "htmlhint": "~0.9.12"
+    "htmlhint": "~0.9.13"
   }
 }
