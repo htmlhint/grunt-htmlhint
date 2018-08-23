@@ -6,7 +6,7 @@
 [![NPM version](https://img.shields.io/npm/v/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
 [![License](https://img.shields.io/npm/l/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
 [![NPM count](https://img.shields.io/npm/dm/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
-[![NPM count](https://img.shields.io/npm/dt/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+[![NPM count](https://img.shields.io/npm/dt/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint) [![Greenkeeper badge](https://badges.greenkeeper.io/thedaviddias/grunt-htmlhint.svg)](https://greenkeeper.io/)
 
 
 ## Getting Started
