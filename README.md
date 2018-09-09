@@ -1,13 +1,39 @@
-# grunt-htmlhint
+<h1 align="center">
+  <br>
+  Grunt HTMLHint
+  <br>
+</h1>
 
-> Lint html files with htmlhint.
+<h4 align="center">Lint HTML files with HTMLHint</h4>
 
-[![Build Status](https://travis-ci.org/yaniswang/grunt-htmlhint.svg)](https://travis-ci.org/yaniswang/grunt-htmlhint)
-[![NPM version](https://img.shields.io/npm/v/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
-[![License](https://img.shields.io/npm/l/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
-[![NPM count](https://img.shields.io/npm/dm/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
-[![NPM count](https://img.shields.io/npm/dt/grunt-htmlhint.svg?style=flat)](https://www.npmjs.com/package/grunt-htmlhint)
+<p align="center">
+  <a href="https://travis-ci.org/htmlhint/grunt-htmlhint">
+    <img src="https://img.shields.io/travis/htmlhint/grunt-htmlhint.svg" alt="Travis Build Status">
+  </a>
+  <a href="https://codecov.io/gh/htmlhint/grunt-htmlhint">
+    <img src="https://codecov.io/gh/htmlhint/grunt-htmlhint/branch/master/graph/badge.svg" alt="Codecov">
+  </a>
+  <a href="https://www.npmjs.com/package/grunt-htmlhint">
+    <img src="https://img.shields.io/npm/dm/grunt-htmlhint.svg" alt="NPM count">
+  </a>
+  <img src="https://badgen.net/badge/license/MIT/green" alt="MIT Licence" />
+  <a href="https://discord.gg/nJ6J9CP">
+    <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat">
+  </a>
+  <a href="http://roadmap.htmlhint.io/roadmap">
+    <img src="https://img.shields.io/badge/check-our%20roadmap-EE503E.svg" alt="Chat">
+  </a>
+</p>
 
+<p align="center">
+  <a href="#getting-started">How To Use</a> • <a href="/CONTRIBUTING.md">Contributing</a> • <a href="http://roadmap.htmlhint.io/">Roadmap</a> • <a href="https://htmlhint.io">Website</a>
+</p>
+
+## Table of Contents
+
+- **[Getting Started](#getting-started)**
+- **[Usage](#usage)**
+- **[Options](#options)**
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -24,14 +50,14 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 grunt.loadNpmTasks('grunt-htmlhint');
 ```
 
-## The "htmlhint" task
+## Usage
 
 ### Overview
 In your project's Gruntfile, add a section named `htmlhint` to the data object passed into `grunt.initConfig()`.
 
 ### Options
 
-See all rules here: [https://github.com/yaniswang/HTMLHint/wiki/Rules](https://github.com/yaniswang/HTMLHint/wiki/Rules)
+See all rules here: [https://github.com/htmlhint/HTMLHint/wiki/Rules](https://github.com/htmlhint/HTMLHint/wiki/Rules)
 
 If options is empty, task will scan nothing.
 
@@ -90,8 +116,8 @@ htmlhint: {
 }
 ```
 
-## Release History
+## Licence
 
- * 2015-10-10   v0.9.9   Update to htmlhint v0.9.9
- * 2015-10-7   v0.9.8   Update to htmlhint v0.9.8
- * 2013-4-6   v0.4.0   First release
+Project initially created by [@yaniswang](https://github.com/yaniswang) and transferred to the [HTMLHint](https://github.com/htmlhint) organization.
+
+[MIT License](./LICENSE)
