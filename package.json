@@ -2,23 +2,18 @@
   "name": "grunt-htmlhint",
   "description": "Validate html files with htmlhint.",
   "version": "0.9.13",
-  "homepage": "https://github.com/yaniswang/grunt-htmlhint",
-  "author": {
-    "name": "Yanis Wang",
-    "email": "yanis.wang@gmail.com",
-    "url": "http://yaniswang.com/"
-  },
+  "homepage": "https://github.com/htmlhint/grunt-htmlhint",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yaniswang/grunt-htmlhint.git"
+    "url": "git@github.com:htmlhint/grunt-htmlhint.git"
   },
   "bugs": {
-    "url": "https://github.com/yaniswang/grunt-htmlhint/issues"
+    "url": "https://github.com/htmlhint/grunt-htmlhint/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/yaniswang/grunt-htmlhint/blob/master/LICENSE-MIT"
+      "url": "https://github.com/htmlhint/grunt-htmlhint/blob/master/LICENSE.md"
     }
   ],
   "main": "Gruntfile.js",

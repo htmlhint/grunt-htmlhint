@@ -1,11 +1,3 @@
-/*
- * grunt-htmlhint
- * https://github.com/yaniswang/grunt-htmlhint
- *
- * Copyright (c) 2013 Yanis Wang
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function(grunt) {

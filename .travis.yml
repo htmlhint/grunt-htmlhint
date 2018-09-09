@@ -1,16 +1,22 @@
 sudo: false
-
 language: node_js
-node_js:
-    - "0.10"
-    - "0.12"
-    - "4.1"
-    
 cache:
   directories:
-    - node_modules
-
-matrix:
-  fast_finish: true
-  
-script: "grunt"
+    - ~/.npm
+node_js:
+  - '10'
+  - '9'
+  - '8'
+  - '6'
+install:
+  - npm install -g codecov
+  - npm install
+script:
+  - 'grunt'
+  - codecov
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+  except:
+    - /^v\d+\.\d+\.\d+$/
