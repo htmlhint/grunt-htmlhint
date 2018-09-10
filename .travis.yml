@@ -1,4 +1,3 @@
-sudo: false
 language: node_js
 cache:
   directories:
@@ -13,7 +12,11 @@ install:
   - npm install
 script:
   - 'grunt'
-  - codecov
+install:
+  - npm install -g codecov
+  - npm install
+after_success:
+  - npm run codecov
 branches:
   only:
     - master
