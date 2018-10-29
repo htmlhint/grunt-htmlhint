@@ -21,11 +21,11 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt --force"
+    "test": "grunt -f"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt": "1.0.1",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt": "1.0.3",
     "grunt-cli": "1.2.0"
   },
   "peerDependencies": {
@@ -35,6 +35,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "htmlhint": "~0.9.13"
+    "htmlhint": "^0.10.1"
   }
 }
