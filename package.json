@@ -24,12 +24,12 @@
     "test": "grunt -f"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "^2.0.0",
-    "grunt": "1.0.3",
-    "grunt-cli": "1.2.0"
+    "grunt": "1.4.1",
+    "grunt-cli": "1.4.3",
+    "grunt-contrib-jshint": "3.0.0"
   },
   "peerDependencies": {
-    "grunt": ">=0.4.0"
+    "grunt": "1.4.1"
   },
   "keywords": [
     "gruntplugin"
