@@ -3,9 +3,7 @@ cache:
   directories:
     - ~/.npm
 node_js:
-  - '10'
-  - '9'
-  - '8'
+  - '14'
 install:
   - npm install -g codecov
   - npm install
@@ -14,6 +12,5 @@ after_success:
 branches:
   only:
     - master
-    - /^greenkeeper/.*$/
   except:
     - /^v\d+\.\d+\.\d+$/
