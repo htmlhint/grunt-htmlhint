@@ -35,6 +35,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "htmlhint": "^0.10.1"
+    "htmlhint": "^0.15.1"
   }
 }
