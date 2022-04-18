@@ -24,7 +24,7 @@
     "test": "grunt -f"
   },
   "devDependencies": {
-    "grunt": "1.4.1",
+    "grunt": "1.5.0",
     "grunt-cli": "1.4.3",
     "grunt-contrib-jshint": "3.0.0"
   },
