@@ -7,9 +7,6 @@
 <h4 align="center">Lint HTML files with HTMLHint</h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/htmlhint/grunt-htmlhint">
-    <img src="https://img.shields.io/travis/htmlhint/grunt-htmlhint.svg" alt="Travis Build Status">
-  </a>
   <a href="https://codecov.io/gh/htmlhint/grunt-htmlhint">
     <img src="https://codecov.io/gh/htmlhint/grunt-htmlhint/branch/master/graph/badge.svg" alt="Codecov">
   </a>
@@ -17,16 +14,10 @@
     <img src="https://img.shields.io/npm/dm/grunt-htmlhint.svg" alt="NPM count">
   </a>
   <img src="https://badgen.net/badge/license/MIT/green" alt="MIT Licence" />
-  <a href="https://discord.gg/nJ6J9CP">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat">
-  </a>
-  <a href="http://roadmap.htmlhint.io/roadmap">
-    <img src="https://img.shields.io/badge/check-our%20roadmap-EE503E.svg" alt="Chat">
-  </a>
 </p>
 
 <p align="center">
-  <a href="#getting-started">How To Use</a> • <a href="/CONTRIBUTING.md">Contributing</a> • <a href="http://roadmap.htmlhint.io/">Roadmap</a> • <a href="https://htmlhint.com">Website</a>
+  <a href="#getting-started">How To Use</a> • <a href="/CONTRIBUTING.md">Contributing</a> • <a href="https://htmlhint.com/">Website</a>
 </p>
 
 ## Table of Contents
